@@ -1,0 +1,333 @@
+/* ==========================================================================
+   ENGINE/GLOBAL.CSS
+
+   You can edit this, but a mistake in here breaks every page at once, and you
+   do not need to touch it to make the site yours.
+
+   It is the machinery: the reset, the navigation, the links, the buttons.
+   Your colors, your fonts, and your page layout all live in pages.css, which
+   sits in the main folder next to the HTML files.
+
+   The values in the :root block below are plain black-and-white fallbacks.
+   pages.css loads after this file and replaces them with the real ones, so
+   changing a color here will not do anything. Change it in pages.css.
+
+   Do read it, though. Reading other people's CSS is most of how you learn
+   CSS. Once the rest of the site makes sense, this is a good next step.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FALLBACK SETTINGS
+   If you deleted pages.css, the site would still work. It would just look
+   plain, using everything below.
+   -------------------------------------------------------------------------- */
+:root {
+  --paper: #ffffff;
+  --ink: #111111;
+  --muted: #666666;
+  --rule: #cccccc;
+  --accent: #0000ee;
+
+  --font-body: sans-serif;
+  --font-mono: monospace;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  --label-width: 7rem; /* the narrow left column that holds section labels */
+  --max-width: 780px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET
+   Browsers add their own spacing. This clears it so we start from a
+   predictable place.
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* makes width include padding and border */
+}
+
+img {
+  max-width: 100%; /* stops images overflowing on small screens */
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE TEXT
+   Almost everything on this site is done with type and spacing rather than
+   boxes and color. That means the sizes and the gaps have to be deliberate.
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+
+  /* These three lines keep the footer at the bottom of the window even when
+     there is not enough content to fill the screen. The body becomes a
+     top-to-bottom stack that is at least as tall as the window, and <main>
+     below grows to take up whatever space is left over. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* clamp() picks a size between the first and last values based on how wide
+   the window is, so the heading shrinks on phones without a media query. */
+h1 {
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+}
+
+/* Section headings are small monospace labels rather than big text. They sit
+   in the narrow left column and name what is beside them, the way a label in
+   the margin of a printed page does. */
+h2 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  padding-top: 0.3rem; /* nudges the label to line up with the first line */
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* Nothing should have a margin hanging off its bottom edge. */
+p:last-child,
+ul:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+/* Keyboard users need to see where they are on the page. Keep this. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT
+   -------------------------------------------------------------------------- */
+
+/* Put class="container" on anything you want centered with a max width.
+
+   Note that this sets padding-left and padding-right separately rather than
+   using the "padding" shorthand. The shorthand would also set the top and
+   bottom to zero, which would wipe out the padding on the sections below. */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+section {
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* class="row" is the layout used everywhere on this site: a narrow column on
+   the left for a label, a wide one on the right for the actual content. It
+   is what makes the pages feel like one thing rather than three. */
+.row {
+  display: grid;
+  grid-template-columns: var(--label-width) 1fr;
+  gap: var(--space-lg);
+  align-items: start; /* keeps the label at the top, not vertically centered */
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER AND NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.nav-logo {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none; /* removes the bullet points */
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+/* class="active" in the HTML marks the page you are currently on. */
+.nav-links a.active {
+  color: var(--ink);
+}
+
+/* The hamburger button. Hidden on desktop, shown on phones (see section 8). */
+.nav-toggle {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   6. BUTTONS
+   Put class="btn" on a link. There are only two on the whole site, which is
+   what keeps them worth noticing.
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 0.5em 1.1em;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--ink);
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* --------------------------------------------------------------------------
+   7. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: var(--space-lg) 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. SMALL SCREENS
+   Everything in here only applies when the window is 700px wide or narrower,
+   which is roughly phone size.
+   -------------------------------------------------------------------------- */
+@media (max-width: 700px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  section {
+    padding: var(--space-lg) 0;
+  }
+
+  /* The two columns become one, with the label stacked above its content. */
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  h2 {
+    padding-top: 0;
+  }
+
+  .site-header {
+    position: relative; /* the menu below positions itself against this */
+  }
+
+  .nav-toggle {
+    display: block; /* show the menu button */
+  }
+
+  /* Hide the menu by default on phones. */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: var(--space-md) var(--space-md) var(--space-lg);
+  }
+
+  /* engine/components.js adds class="open" when you tap the button. */
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. REDUCED MOTION
+   Some people set their computer to reduce animation, often because motion
+   makes them feel ill. This turns the fading off for them. Keep it.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}

@@ -1,0 +1,157 @@
+/* ==========================================================================
+   PAGES.CSS
+
+   THIS IS YOUR FILE. Edit anything here.
+
+   It has two halves. The first is the design settings: change a color or a
+   font here and it updates everywhere on the site at once. The second is the
+   layout of individual sections.
+   ========================================================================== */
+
+/* The two fonts, fetched from Google Fonts. This has to stay at the very top:
+   @import only works before any other rule in the file.
+
+   To use different fonts, pick them at fonts.google.com, paste the address it
+   gives you below, and put their names in --font-body and --font-mono. If you
+   would rather not load anything from the internet, delete this line and the
+   backup fonts further down will be used instead. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap");
+
+/* --------------------------------------------------------------------------
+   1. YOUR DESIGN SETTINGS
+
+   These replace the plain fallbacks in engine/global.css, because this file
+   loads second and the last one wins.
+
+   The site is built out of type, thin lines, and space, with one color used
+   sparingly. That restraint is the design. If you add a second bright color
+   you will probably make it worse, so start by changing --accent and living
+   with the result for a bit.
+   -------------------------------------------------------------------------- */
+:root {
+  --paper: #fbfbf9;  /* page background, a white that is barely warm */
+  --ink: #16181a;    /* text, nearly black but not pure black */
+  --muted: #6c7076;  /* labels, dates, anything secondary */
+  --rule: #e2e2dd;   /* the thin dividing lines */
+  --accent: #2f5d4b; /* links only. A muted green, not a bright one. */
+
+  /* Fonts, loaded by the <link> tags in the HTML files. The names after the
+     comma are backups, used if the font fails to download. */
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, monospace;
+
+  --label-width: 7rem; /* the narrow left column. Try 10rem. */
+  --max-width: 780px;  /* how wide the page gets. Try 640px. */
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO
+   The top of the home page. No label column here: it is the one place on the
+   site that gets the full width, which is what makes it read as the opening.
+   -------------------------------------------------------------------------- */
+.hero {
+  padding-top: calc(var(--space-xl) + var(--space-lg));
+  border-top: none; /* nothing above it to divide it from */
+}
+
+.hero-lede {
+  font-size: 1.1rem;
+  max-width: 38em; /* short lines are easier to read than wide ones */
+}
+
+/* Sits the two hero links side by side with a gap. */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap; /* they stack instead of overflowing on a phone */
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   3. SKILLS
+   A plain comma-free list set in the monospace face, so it reads as data
+   rather than as a sentence.
+   -------------------------------------------------------------------------- */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem var(--space-md);
+  list-style: none;
+  margin-top: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   4. CONTACT
+   -------------------------------------------------------------------------- */
+.contact-links {
+  list-style: none;
+  margin-top: var(--space-md);
+}
+
+.contact-links li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* The last one would otherwise draw a line just above the footer's line. */
+.contact-links li:last-child {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. PROJECT LIST
+   Used on projects.html. Each project is a row: what it was built with on the
+   left, what it is on the right. Same two-column shape as the rest of the
+   site, so the pages feel related.
+   -------------------------------------------------------------------------- */
+.project {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* The first one sits directly under the intro, so it does not need a gap. */
+.project:first-of-type {
+  padding-top: 0;
+}
+
+/* The link to the code, under each description. */
+.project-link {
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* The line of tools in the left column. */
+.project-tools {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding-top: 0.3rem; /* lines the label up with the project title */
+  margin-bottom: 0;
+}
+
+.project p {
+  max-width: 42em;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. SMALL SCREENS
+   A few adjustments on top of the ones in engine/global.css.
+   -------------------------------------------------------------------------- */
+@media (max-width: 700px) {
+  .hero {
+    padding-top: var(--space-lg);
+  }
+
+  .project-tools {
+    padding-top: 0;
+    margin-bottom: var(--space-sm);
+  }
+}

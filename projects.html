@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CHANGE THIS -->
+  <title>Projects | Your Name</title>
+  <meta name="description" content="Projects built by Your Name.">
+
+  <link rel="stylesheet" href="engine/global.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+
+<body>
+
+  <!-- Filled in from site.js. See the note in index.html. -->
+  <header class="site-header" id="site-header"></header>
+
+  <main>
+
+    <section class="hero container">
+      <h1>Projects</h1>
+      <p class="hero-lede">
+        A few things I have built. Each one taught me something I did not know
+        when I started it.
+      </p>
+    </section>
+
+    <section class="container">
+
+      <!-- ==================================================================
+           PROJECT LIST
+
+           Each <article class="project row"> is one project: what it was
+           built with on the left, what it is on the right.
+
+           To add a project, copy a whole <article> block and paste it below
+           the others, then change the text. To remove one, delete the whole
+           block.
+
+           Write the description the way you would explain it to a friend,
+           including what was hard about it. That reads better than a list of
+           features.
+           ================================================================== -->
+
+      <!-- PROJECT 1 -->
+      <article class="project row">
+        <p class="project-tools">HTML, CSS, JS</p>
+        <div>
+          <h3>Weather Dashboard</h3>
+          <p>
+            Shows the forecast for any city you type in. I built it to practice
+            calling an API, and most of the work turned out to be handling what
+            happens when the city does not exist.
+          </p>
+          <a class="project-link" href="https://github.com/yourusername/weather">View the code</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="project row">
+        <p class="project-tools">HTML, CSS, JS</p>
+        <div>
+          <h3>Study Timer</h3>
+          <p>
+            A pomodoro timer that tracks how long I actually study rather than
+            how long I meant to. Keeping the countdown accurate while the tab
+            sits in the background was the hard part.
+          </p>
+          <a class="project-link" href="https://github.com/yourusername/timer">View the code</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="project row">
+        <p class="project-tools">Python</p>
+        <div>
+          <h3>Recipe Scraper</h3>
+          <p>
+            Pulls recipes off cooking sites and saves them as plain text,
+            without the life story above the ingredients. The first thing I
+            wrote that someone other than me uses.
+          </p>
+          <a class="project-link" href="https://github.com/yourusername/recipes">View the code</a>
+        </div>
+      </article>
+
+      <!-- Copy one of the blocks above to add a fourth project here. -->
+
+    </section>
+
+  </main>
+
+  <!-- Also filled in from site.js. -->
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <!-- The scripts go last, after the HTML above exists, so that they can find
+       the header and footer they need to fill in. site.js comes first because
+       components.js reads what is in it. -->
+  <script src="site.js"></script>
+  <script src="engine/components.js"></script>
+
+</body>
+
+</html>
