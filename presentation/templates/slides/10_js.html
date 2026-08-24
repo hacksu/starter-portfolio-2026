@@ -1,0 +1,53 @@
+<div class="slide" id="slide-10">
+  <div class="slide-header">
+    <span class="tag">09 - JavaScript</span>
+    <img src="/logo" alt="HacKSU" style="height:22px; vertical-align:middle; opacity:0.92;">
+  </div>
+  <div class="slide-body">
+    <h2>A Bit of JavaScript</h2>
+
+    <div class="two-col" style="margin-top:16px;">
+      <div>
+        <pre style="font-size:0.9em;"><code class="language-html">&lt;h1 id="title"&gt;Hello&lt;/h1&gt;
+&lt;button id="go"&gt;Click me&lt;/button&gt;
+
+&lt;script&gt;
+
+  const title = document.getElementById("title");
+  const go    = document.getElementById("go");
+
+  go.addEventListener("click", function () {
+    title.textContent = "You clicked it!";
+  });
+
+&lt;/script&gt;</code></pre>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px; justify-content:center;">
+        <div class="box">
+          <h3>1. Find something</h3>
+          <p style="margin-top:8px; font-size:1.05em;">
+            <code>getElementById</code> grabs a tag by its <code>id</code>.
+          </p>
+        </div>
+        <div class="box">
+          <h3>2. Change it</h3>
+          <p style="margin-top:8px; font-size:1.05em;">
+            <code>textContent</code> replaces the words inside it.
+          </p>
+        </div>
+        <div class="box">
+          <h3>3. React to a click</h3>
+          <p style="margin-top:8px; font-size:1.05em;">
+            <code>addEventListener</code> runs your code when something happens.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-bar" style="margin-top:22px;">
+      Find something, change it, react to the user. <span class="hl-green">That is most of what
+      JavaScript does on a website.</span>
+    </div>
+  </div>
+</div>

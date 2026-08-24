@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How the Web Works - HacKSU</title>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas" style="position:fixed;inset:0;z-index:-1;pointer-events:none;display:block;"></canvas>
+
+<div id="deck">
+  {% block slides %}{% endblock %}
+</div>
+
+<div id="nav">
+  <button id="btn-prev" onclick="navigate(-1)" disabled>&#8592; PREV</button>
+  <div id="progress-dots"></div>
+  <span id="slide-counter">1 / 13</span>
+  <button id="btn-next" onclick="navigate(1)">NEXT &#8594;</button>
+  <span id="key-hint">arrows / space / page up / page down</span>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

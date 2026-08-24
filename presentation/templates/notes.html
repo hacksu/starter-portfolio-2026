@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speaker Notes - How the Web Works</title>
+  <style>
+    :root {
+      --green: #35C982;
+      --blue:  #4683FF;
+      --bg:    #142027;
+      --card:  #0d1a22;
+      --border:#1a2a3f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: #e8e8e8;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 40px 60px 80px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 2px solid var(--green);
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    header h1 { font-size: 1.4em; color: var(--green); letter-spacing: 3px; }
+    header p  { font-size: 0.8em; color: #666; }
+
+    .runsheet {
+      border: 1px solid var(--green);
+      background: var(--card);
+      padding: 18px 22px;
+      margin-bottom: 36px;
+    }
+    .runsheet h2 {
+      font-size: 1em;
+      color: var(--green);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .runsheet table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+    .runsheet td { padding: 4px 0; vertical-align: top; }
+    .runsheet td.time { color: var(--blue); width: 92px; white-space: nowrap; }
+    .runsheet td.mins { color: #667; width: 62px; }
+    .runsheet strong { color: var(--green); }
+    .runsheet tr.break td { color: var(--green); padding-top: 10px; }
+
+    .slide-note {
+      border: 1px solid var(--border);
+      background: var(--card);
+      margin-bottom: 24px;
+      padding: 20px 24px;
+    }
+    .slide-note.setup { border-color: var(--blue); }
+    .slide-note .num {
+      font-size: 0.7em;
+      color: var(--blue);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .slide-note h2 {
+      font-size: 1.05em;
+      color: var(--green);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .slide-note ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .slide-note ul li::before { content: '> '; color: var(--blue); }
+    .slide-note ul li { font-size: 0.9em; line-height: 1.6; color: #ddd; }
+    .slide-note ul li code {
+      background: #0a1520;
+      padding: 1px 5px;
+      border: 1px solid var(--border);
+      color: var(--green);
+      font-size: 0.92em;
+    }
+    .slide-note .demo {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-left: 3px solid var(--blue);
+      background: #091420;
+      font-size: 0.85em;
+      color: #a0d4bc;
+    }
+    .slide-note .demo strong { color: var(--blue); }
+    .slide-note .demo.switch { border-left-color: var(--green); background: #08210f; }
+    .slide-note .demo.switch strong { color: var(--green); }
+    @media print {
+      body { background: white; color: black; padding: 20px; max-width: none; }
+      .slide-note, .runsheet { border: 1px solid #ccc; background: #f9f9f9; break-inside: avoid; }
+      .slide-note h2, .runsheet h2 { color: #222; }
+      .slide-note ul li { color: #333; }
+      .slide-note .demo { border-left-color: #4683FF; background: #f0f4ff; color: #333; }
+      header { border-color: #333; }
+      header h1 { color: #222; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>SPEAKER NOTES</h1>
+    <p style="margin-top:4px;">How the Web Works - HacKSU Workshop - 40 minutes</p>
+  </div>
+  <p>print as reference &nbsp;·&nbsp; Ctrl+P</p>
+</header>
+
+<div class="runsheet">
+  <h2>Run of show - 40 minutes</h2>
+  <table>
+    <tr><td class="time">0:00 - 0:03</td><td class="mins">3 min</td><td>Slides 1-3. Welcome, the three languages, a page is just a file.</td></tr>
+    <tr><td class="time">0:03 - 0:08</td><td class="mins">5 min</td><td>Slides 4-5. How a tag works, the page skeleton. <strong>Switch to the editor at the end of slide 5.</strong></td></tr>
+    <tr><td class="time">0:08 - 0:20</td><td class="mins">12 min</td><td>Slides 6-8, typed live. Headings, paragraphs, lists, links, images. Build one page in front of them.</td></tr>
+    <tr><td class="time">0:20 - 0:25</td><td class="mins">5 min</td><td>Slide 9. CSS, added live to the page you just built.</td></tr>
+    <tr><td class="time">0:25 - 0:28</td><td class="mins">3 min</td><td>Slide 10. JavaScript, one button, typed live.</td></tr>
+    <tr><td class="time">0:28 - 0:34</td><td class="mins">6 min</td><td><strong>Slide 11. Hands off, they type.</strong> Starter repo up on screen, walk the room, help people.</td></tr>
+    <tr><td class="time">0:34 - 0:38</td><td class="mins">4 min</td><td>Slide 12. Walk through deployment and do it live with the page you built together.</td></tr>
+    <tr><td class="time">0:38 - 0:40</td><td class="mins">2 min</td><td>Slide 13. Questions and contact.</td></tr>
+    <tr class="break"><td colspan="3">The deck is a reference, not the lesson. From slide 6 onward you should be in the editor far more than on the slides. Flip back only to show the next tag.</td></tr>
+  </table>
+</div>
+
+<div class="slide-note setup">
+  <div class="num"><span>Before you start</span><span>setup</span></div>
+  <h2>Setup - do this before anyone arrives</h2>
+  <ul>
+    <li>Editor open on the projector at a font size the back row can read. VS Code, zoom level 2 or 3.</li>
+    <li>An empty folder with one empty file in it: <code>index.html</code>.</li>
+    <li>A browser window beside the editor showing that file, so a save and a refresh are both visible at once.</li>
+    <li>A photo in the same folder for the <code>img</code> section. Something you can point at.</li>
+    <li>Already signed in to Vercel. Do not spend workshop time on a login screen.</li>
+  </ul>
+  <div class="demo"><strong>The shape of this session:</strong> three slides of context, then you build a page live while the deck sits behind you as a reference. They should watch a file turn into a website.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 1</span><span>0:00</span></div>
+  <h2>Title</h2>
+  <ul>
+    <li>Ask: <em>"Who here has never written a line of HTML?"</em> Reassure the hands that go up, they are the target audience.</li>
+    <li>Set the promise: in forty minutes you will have written a web page and put it on the internet at a real address.</li>
+    <li>Say what we are skipping: React, npm, build tools, the terminal. All real, all worth learning later, none needed today.</li>
+    <li>Run through the five numbered items so they know the shape of the session.</li>
+  </ul>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 2</span><span>0:01</span></div>
+  <h2>Every Website Is Three Languages</h2>
+  <ul>
+    <li>Ninety seconds. This is orientation, not content.</li>
+    <li>The analogy that lands: HTML is what you say, CSS is how it is dressed, JavaScript is what it does when poked.</li>
+    <li>Be clear that today is mostly HTML, and that it is the part nobody can skip.</li>
+  </ul>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 3</span><span>0:02</span></div>
+  <h2>A Web Page Is Just a File</h2>
+  <ul>
+    <li>This is the idea that surprises beginners most: no server, no special software, no upload. It is a text file your browser knows how to read.</li>
+    <li>Mention <code>index.html</code> being the special name, because it comes back at deployment.</li>
+  </ul>
+  <div class="demo"><strong>Demo:</strong> double-click an HTML file on the desktop and point at <code>file:///</code> in the address bar. A website, with no internet involved.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 4</span><span>0:04</span></div>
+  <h2>A Tag Wraps Around Content</h2>
+  <ul>
+    <li>Point at each part of the diagram and name it out loud: opening tag, content, closing tag.</li>
+    <li>The slash is the whole difference between opening and closing. Say it explicitly, it is a real stumbling block.</li>
+    <li>Nesting: close them in the order you opened them. Compare it to brackets in maths if that helps the room.</li>
+  </ul>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 5</span><span>0:06</span></div>
+  <h2>Every Page Starts the Same Way</h2>
+  <ul>
+    <li>head is about the page, body is the page. That one sentence is the whole slide.</li>
+    <li>Do not explain DOCTYPE beyond "it tells the browser this is modern HTML, always put it first".</li>
+    <li>Tell them the title is the browser tab, then point at your own browser tab.</li>
+  </ul>
+  <div class="demo switch"><strong>SWITCH TO THE EDITOR NOW.</strong> Type this skeleton from scratch into the empty <code>index.html</code>, save, refresh the browser. A blank white page with "Hello!" on it. From here on the deck is only there to show the next tag.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 6</span><span>0:09</span></div>
+  <h2>Headings and Paragraphs - typed live</h2>
+  <ul>
+    <li>Flip to the slide, read the tag, flip back to the editor and type it. Save. Refresh. Repeat.</li>
+    <li>Type an <code>h1</code> with your own name, then an <code>h2</code>, then an <code>h3</code>, so they watch the sizes step down.</li>
+    <li>Write a paragraph about yourself. Make it real, they remember it better.</li>
+    <li>Then the enter-key demo: press enter three times inside a paragraph, save, refresh, nothing moves. HTML ignores your line breaks. A new paragraph needs a new <code>&lt;p&gt;</code>.</li>
+  </ul>
+  <div class="demo"><strong>Invite them in:</strong> anyone with a laptop should be typing along by now. Say so out loud and pause ten seconds for people to catch up.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 7</span><span>0:13</span></div>
+  <h2>Lists - typed live</h2>
+  <ul>
+    <li>Type a <code>ul</code> of things you know or like. Add an <code>li</code>, save, refresh, add another.</li>
+    <li>Then change the <code>ul</code> to an <code>ol</code> and refresh. Bullets become numbers and nothing else changed. That lands the difference better than explaining it.</li>
+    <li>Common mistake worth showing: an <code>li</code> on its own outside a list. Do it wrong on purpose.</li>
+  </ul>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 8</span><span>0:17</span></div>
+  <h2>Links and Images - typed live</h2>
+  <ul>
+    <li>Type a link to something real and click it in the browser. That is the moment the page stops feeling like a document.</li>
+    <li>Show all three kinds: a full web address, another file, and a <code>mailto:</code>.</li>
+    <li>Drop in the photo you prepared. Point out that <code>src</code> is just a filename sitting next to the HTML file.</li>
+    <li>Break it on purpose: misspell the filename, refresh, and watch the alt text appear. Fastest possible explanation of why <code>alt</code> matters.</li>
+  </ul>
+  <div class="demo"><strong>Checkpoint:</strong> the page now has a heading, a paragraph, a list, a link, and an image. Say that out loud. It is a real web page and it took nine minutes.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 9</span><span>0:22</span></div>
+  <h2>A Bit of CSS - typed live</h2>
+  <ul>
+    <li>Make <code>style.css</code> next to the HTML file, add the <code>&lt;link&gt;</code> in the head, and prove the connection with something obvious like <code>background: hotpink</code>.</li>
+    <li>Then tone it down and do the useful ones: <code>color</code>, <code>font-size</code> on the h1, <code>width</code> on the image.</li>
+    <li>Selector, brace, property, value. Name the parts once, then keep typing.</li>
+    <li>Do not teach the cascade, specificity, flexbox, or grid. No time, and they do not need any of it to make something they like.</li>
+  </ul>
+  <div class="demo"><strong>Ask the room for a colour</strong> and use whatever gets shouted. Keeps people watching, and makes the point that CSS is instant feedback.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 10</span><span>0:28</span></div>
+  <h2>A Bit of JavaScript - typed live</h2>
+  <ul>
+    <li>Four minutes, one example. Add a button and make it change the heading.</li>
+    <li>Say the three steps out loud as you type them: find something, change it, react to a click.</li>
+    <li>Point at the <code>id</code> on the tag and the matching name in <code>getElementById</code>. That connection is the bit people miss.</li>
+    <li>Mention the script goes at the bottom of the body so the tags it looks for already exist.</li>
+    <li>Do not explain variables, functions, loops, or types. Not today.</li>
+  </ul>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 11</span><span>0:28</span></div>
+  <h2>Your Turn - hands off, they type</h2>
+  <ul>
+    <li>Stop presenting. Put the starter repo on screen, leave the slide up, and walk the room for six minutes.</li>
+    <li>Say out loud that they can either grab the starter or keep going with the page you built together. Both are fine.</li>
+    <li>Anyone with nothing on screen yet needs help first. Usually it is an unsaved file or an unclosed tag.</li>
+    <li>Tell them what happens next: in a few minutes you are going to put a page on the internet, so they should get something they like on screen now.</li>
+  </ul>
+  <div class="demo"><strong>Watch the clock.</strong> Six minutes goes fast and the deployment demo is the payoff of the session. Call time at 0:34 even if people are mid-edit, they can keep working through the last slides.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 12</span><span>0:34</span></div>
+  <h2>Putting It on the Internet - do it live</h2>
+  <ul>
+    <li>Bring everyone back. This is the payoff, so do it for real on the projector.</li>
+    <li>Go to vercel.com/new and drag the folder in. No terminal, no Git, no repository. Say that clearly, because most people assume deployment is hard.</li>
+    <li>Read the resulting URL out loud and open it in a fresh tab.</li>
+    <li>Mention GitHub Pages as the alternative for when they are already using Git, then move on. Do not teach Git.</li>
+    <li>Tell them to do the same with their own folder tonight, and that it takes about a minute.</li>
+  </ul>
+  <div class="demo"><strong>Demo:</strong> open the live URL on your phone and hold it up. A file from the laptop, on the internet, on a device that never touched it.</div>
+</div>
+
+<div class="slide-note">
+  <div class="num"><span>Slide 13</span><span>0:38</span></div>
+  <h2>Questions and Contact</h2>
+  <ul>
+    <li>Your LinkedIn and GitHub are on the slide, and the QR code goes to LinkedIn. Tell people to scan it now rather than meaning to later.</li>
+    <li>Point at MDN specifically. Tell them to prefer it over w3schools when the two disagree.</li>
+    <li>If anyone got a URL live during the session, ask them to share it with the room.</li>
+    <li>Stay behind for whoever is stuck. It is almost always an unclosed tag or an unsaved file.</li>
+  </ul>
+</div>
+
+</body>
+</html>
