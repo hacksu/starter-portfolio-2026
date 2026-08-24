@@ -15,6 +15,9 @@ engine/
   components.js   builds the menu and footer on every page
 ```
 
+`pages.css` pulls in `engine/global.css` and the fonts itself, so the HTML only
+ever links one stylesheet.
+
 The four files in the main folder are yours. Edit them freely.
 
 The `engine` folder is not off limits, but it is the part most likely to break

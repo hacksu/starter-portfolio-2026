@@ -8,8 +8,14 @@
    layout of individual sections.
    ========================================================================== */
 
-/* The two fonts, fetched from Google Fonts. This has to stay at the very top:
-   @import only works before any other rule in the file.
+/* The engine's stylesheet, pulled in here so that the HTML files only have to
+   link one stylesheet instead of two. It comes first, and everything you write
+   below overrides it, because when two rules are equally specific the one
+   further down the file wins. */
+@import url("engine/global.css");
+
+/* The two fonts, fetched from Google Fonts. Both @import lines have to stay at
+   the very top: @import only works before any other rule in the file.
 
    To use different fonts, pick them at fonts.google.com, paste the address it
    gives you below, and put their names in --font-body and --font-mono. If you
@@ -20,8 +26,8 @@
 /* --------------------------------------------------------------------------
    1. YOUR DESIGN SETTINGS
 
-   These replace the plain fallbacks in engine/global.css, because this file
-   loads second and the last one wins.
+   These replace the plain fallbacks in engine/global.css, which the @import
+   above pulled in ahead of them.
 
    The site is built out of type, thin lines, and space, with one color used
    sparingly. That restraint is the design. If you add a second bright color

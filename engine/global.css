@@ -9,8 +9,8 @@
    sits in the main folder next to the HTML files.
 
    The values in the :root block below are plain black-and-white fallbacks.
-   pages.css loads after this file and replaces them with the real ones, so
-   changing a color here will not do anything. Change it in pages.css.
+   pages.css pulls this file in at its top and then replaces them with the real
+   ones, so changing a color here will not do anything. Change it in pages.css.
 
    Do read it, though. Reading other people's CSS is most of how you learn
    CSS. Once the rest of the site makes sense, this is a good next step.
