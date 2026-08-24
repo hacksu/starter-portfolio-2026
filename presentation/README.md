@@ -1,21 +1,6 @@
-# How the Web Works - workshop deck
+# How the Web Works
 
-A 40-minute HacKSU workshop teaching HTML, CSS, and JavaScript through the
-starter portfolio in the folder above, ending with deploying it.
-
-## Run it
-
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-Then open http://localhost:5174
-
-- `/` the deck. Arrows, space, or page up/down to navigate. Click a dot to jump.
-- `/notes` speaker notes with a minute-by-minute run of show. Ctrl+P prints clean.
-
-## Structure
+A 40-minute HacKSU workshop on HTML, CSS, and JavaScript, taught through the starter portfolio in the folder above and ending with deploying it.
 
 ```
 app.py                    three routes: deck, notes, logo
@@ -29,7 +14,8 @@ static/
   app.js                  slide navigation and particle background
 ```
 
-To reorder or cut a slide, edit the include list in `templates/index.html`.
-Nothing else references the order.
+A Flask app on port 5174: `pip install -r requirements.txt`, then `python app.py`. `/` is the deck, navigated with arrows, space, or the dots. `/notes` is the speaker notes with a minute-by-minute run of show, and prints clean.
+
+Slide order lives in the include list in `templates/index.html` and nowhere else, so reordering or cutting a slide is one edit there.
 
 Design and plumbing lifted from the polyglot programming deck.
