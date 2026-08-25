@@ -29,13 +29,18 @@
   <!-- ======================================================================
        MAIN
        Everything unique to this page goes inside <main>.
+
+       Every section is the same shape: a heading, then text under it. There
+       are no columns and no boxes to fit things into, so adding a section of
+       your own is a matter of copying one and changing the words.
        ====================================================================== -->
   <main>
 
     <!-- HERO
-         The opening. It is the only section without a label in the left
-         column, which is what makes it read as the start of the page. -->
-    <section class="hero container">
+         The opening. It is the only section whose heading is an <h1> and the
+         only one set larger than the body text, which is what makes it read
+         as the start of the page. -->
+    <section class="container">
       <!-- CHANGE THIS: your name, then one sentence about what you do. Being
            specific reads better than trying to sound impressive. -->
       <h1>Your Name</h1>
@@ -45,37 +50,36 @@
         things that annoy me, and I am looking for a summer internship.
       </p>
 
-      <div class="hero-actions">
-        <a href="projects.html" class="btn">See my work</a>
-        <a href="#contact" class="btn">Get in touch</a>
-      </div>
+      <!-- Two ordinary links in a sentence. A link that has been dressed up
+           as a button is not more clickable than one that has not. -->
+      <p>
+        You can <a href="projects.html">look at what I have built</a>, or
+        <a href="#contact">get in touch</a>.
+      </p>
     </section>
 
-    <!-- ABOUT
-         class="row" puts the heading in the narrow left column and everything
-         else beside it. Every section below uses the same shape. -->
-    <section class="container row" id="about">
+    <!-- ABOUT -->
+    <section class="container" id="about">
       <h2>About</h2>
 
-      <div>
-        <!-- CHANGE THIS: two or three sentences. Where you study or work, how
-             you got into it, what you are building right now. -->
-        <p>
-          I got into programming by modding games in high school, mostly to
-          make them harder. These days I spend my free time on web projects and
-          small scripts that automate the boring parts of coursework.
-        </p>
-        <p>
-          Outside of code I run, cook badly, and read too much science fiction.
-        </p>
-      </div>
+      <!-- CHANGE THIS: two or three sentences. Where you study or work, how
+           you got into it, what you are building right now. -->
+      <p>
+        I got into programming by modding games in high school, mostly to
+        make them harder. These days I spend my free time on web projects and
+        small scripts that automate the boring parts of coursework.
+      </p>
+      <p>
+        Outside of code I run, cook badly, and read too much science fiction.
+      </p>
     </section>
 
     <!-- TOOLS -->
-    <section class="container row">
+    <section class="container">
       <h2>Tools</h2>
 
-      <!-- CHANGE THIS: add or remove <li> lines. -->
+      <!-- CHANGE THIS: add or remove <li> lines. The commas between them are
+           drawn by CSS, so do not type them in here. -->
       <ul class="skill-list">
         <li>HTML</li>
         <li>CSS</li>
@@ -87,20 +91,18 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="container row" id="contact">
+    <section class="container" id="contact">
       <h2>Contact</h2>
 
-      <div>
-        <p>Email is fastest. I reply within a day or two.</p>
+      <p>Email is fastest. I reply within a day or two.</p>
 
-        <!-- CHANGE THESE: your real links. mailto: opens the visitor's email
-             app with your address already filled in. -->
-        <ul class="contact-links">
-          <li><a href="mailto:you@example.com">you@example.com</a></li>
-          <li><a href="https://github.com/yourusername">github.com/yourusername</a></li>
-          <li><a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></li>
-        </ul>
-      </div>
+      <!-- CHANGE THESE: your real links. mailto: opens the visitor's email
+           app with your address already filled in. -->
+      <ul class="contact-links">
+        <li><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><a href="https://github.com/yourusername">github.com/yourusername</a></li>
+        <li><a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></li>
+      </ul>
     </section>
 
   </main>

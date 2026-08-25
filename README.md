@@ -16,4 +16,4 @@ The root files are the ones meant to be edited. Both pages link only `pages.css`
 
 The menu and footer are data in `site.js`, inserted at load time by `engine/components.js`. One edit instead of one per page, at the cost of both being invisible with JavaScript off.
 
-The design is type, thin lines, and space. Its one structural idea is the two-column `row`: a short monospace label on the left, content on the right. Section names on the home page, tools on the projects page. `--accent`, `--label-width`, and `--max-width` in `:root` control most of the look.
+The design is a document: one column of serif text on white, headings the same size as the words under them, and links in blue that turn purple once visited. There are no boxes, no dividing lines, and no second color, so the spacing is doing all of the work. No fonts are downloaded, so the page renders instantly and works offline. `--accent` and `--max-width` in `:root` control most of the look.

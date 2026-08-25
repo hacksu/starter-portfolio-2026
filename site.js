@@ -5,7 +5,7 @@
 
    The menu and the footer appear on every page. Rather than copying them into
    each HTML file and having to remember to change both, they are written out
-   once, here, and put onto the page by dont-edit/components.js.
+   once, here, and put onto the page by engine/components.js.
 
    Change something here and it changes on every page at once.
    ========================================================================== */
